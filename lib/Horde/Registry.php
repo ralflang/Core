@@ -759,13 +759,14 @@ class Horde_Registry implements Horde_Shutdown_Task
      * Load an application's API object.
      *
      * @param string $app  The application to load.
+     * @param string $api  The api implementation to load. Defaults to the base api
      *
      * @return Horde_Registry_Api  The API object, or null if not available.
      */
-    protected function _loadApi($app)
+    protected function _loadApi($app, $apiName = '')
     {
-        if (isset($this->_cache['ob'][$app]['api'])) {
-            return $this->_cache['ob'][$app]['api'];
+        if (isset($this->_cache['ob'][$app]['api' . $apiName])) {
+            return $this->_cache['ob'][$app]['api' . $apiName];
         }
 
         $api = null;
@@ -776,13 +777,13 @@ class Horde_Registry implements Horde_Shutdown_Task
 
         if (in_array($this->applications[$app]['status'], $status)) {
             try {
-                $api = $this->getApiInstance($app, 'api');
+                $api = $this->getApiInstance($app, 'api', $apiName);
             } catch (Horde_Exception $e) {
                 Horde::log($e, 'DEBUG');
             }
         }
 
-        $this->_cache['ob'][$app]['api'] = $api;
+        $this->_cache['ob'][$app]['api' . $apiName] = $api;
 
         return $api;
     }
@@ -792,14 +793,15 @@ class Horde_Registry implements Horde_Shutdown_Task
      *
      * @param string $app   The application to load.
      * @param string $type  Either 'application' or 'api'.
+     * @param string $apiName  Either empty string for default or a specific Api
      *
      * @return Horde_Registry_Api|Horde_Registry_Application  The API object.
      * @throws Horde_Exception
      */
-    public function getApiInstance($app, $type)
+    public function getApiInstance($app, $type, $apiName = '')
     {
-        if (isset($this->_cache['ob'][$app][$type])) {
-            return $this->_cache['ob'][$app][$type];
+        if (isset($this->_cache['ob'][$app][$type . $apiName])) {
+            return $this->_cache['ob'][$app][$type .$apiName];
         }
 
         $path = $this->get('fileroot', $app) . '/lib';
@@ -833,8 +835,22 @@ class Horde_Registry implements Horde_Shutdown_Task
 
         /* Can't autoload here, since the application may not have been
          * initialized yet. */
-        $classname = Horde_String::ucfirst($app) . '_' . $cname;
-        $path = $path . '/' . $cname . '.php';
+        if ($type == 'api' && $apiName) {
+            $classname = Horde_String::ucfirst($app) . '_' . $cname . '_' . $apiName;
+            $path = $path . '/' . $cname . '/' . $apiName . '.php';
+            /**
+             * NOTE: Remove in Horde 7
+             * Fall back to default $Application_Api.php
+             */
+            if (!file_exists($path)) {
+                return $this->getApiInstance($app, $type);
+            }
+
+        } else {
+            $classname = Horde_String::ucfirst($app) . '_' . $cname;
+            $path = $path . '/' . $cname . '.php';
+        }
+
         if (file_exists($path)) {
             include_once $path;
         } else {
@@ -845,11 +861,11 @@ class Horde_Registry implements Horde_Shutdown_Task
             throw new Horde_Exception("$app does not have an API");
         }
 
-        $this->_cache['ob'][$app][$type] = ($type == 'application')
+        $this->_cache['ob'][$app][$type . $apiName] = ($type == 'application')
             ? new $classname($app)
             : new $classname();
 
-        return $this->_cache['ob'][$app][$type];
+        return $this->_cache['ob'][$app][$type . $apiName];
     }
 
     /**
@@ -1086,14 +1102,16 @@ class Horde_Registry implements Horde_Shutdown_Task
             throw new Horde_Exception('The method "' . $method . '" is not defined in the Horde Registry.');
         }
 
-        return $this->callByPackage($lookup[0], $lookup[1], $args);
+        return $this->callByPackage($lookup[0], $method, $args);
     }
 
     /**
      * Output the hook corresponding to the specific package named.
      *
      * @param string $app     The application being called.
-     * @param string $call    The method to call.
+     * @param string $call    The method to call
+     *                        Full signature to try api-specific class first
+                              Fall back to Api.php
      * @param array $args     Arguments to the method.
      * @param array $options  Additional options:
      *   - noperms: (boolean) If true, don't check the perms.
@@ -1104,6 +1122,7 @@ class Horde_Registry implements Horde_Shutdown_Task
     public function callByPackage($app, $call, array $args = array(),
                                   array $options = array())
     {
+
         /* Note: calling hasMethod() makes sure that we've cached
          * $app's services and included the API file, so we don't try
          * to do it again explicitly in this method. */
