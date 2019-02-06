@@ -1,8 +1,8 @@
 {
     "name": "horde/core",
     "description": "Core Horde Framework library",
-    "type": "library",
-    "homepage": "https://www.horde.org/libraries/Horde_Core",
+    "type": "horde-library",
+    "homepage": "https://www.horde.org",
     "license": "LGPL-2.1",
     "authors": [
         {
@@ -27,86 +27,354 @@
         }
     ],
     "version": "2.31.1",
-    "time": "2017-11-14",
+    "time": "2019-02-06",
     "repositories": [
         {
-            "type": "pear",
-            "url": "https://pear.horde.org"
+            "url": "https://github.com/horde/Alarm",
+            "type": "vcs"
+        },
+        {
+            "url": "https://github.com/horde/Auth",
+            "type": "vcs"
+        },
+        {
+            "url": "https://github.com/horde/Autoloader",
+            "type": "vcs"
+        },
+        {
+            "url": "https://github.com/horde/Browser",
+            "type": "vcs"
+        },
+        {
+            "url": "https://github.com/horde/Cache",
+            "type": "vcs"
+        },
+        {
+            "url": "https://github.com/horde/Cli",
+            "type": "vcs"
+        },
+        {
+            "url": "https://github.com/horde/Compress",
+            "type": "vcs"
+        },
+        {
+            "url": "https://github.com/horde/Compress_Fast",
+            "type": "vcs"
+        },
+        {
+            "url": "https://github.com/horde/Controller",
+            "type": "vcs"
+        },
+        {
+            "url": "https://github.com/horde/CssMinify",
+            "type": "vcs"
+        },
+        {
+            "url": "https://github.com/horde/Data",
+            "type": "vcs"
+        },
+        {
+            "url": "https://github.com/horde/Date",
+            "type": "vcs"
+        },
+        {
+            "url": "https://github.com/horde/Exception",
+            "type": "vcs"
+        },
+        {
+            "url": "https://github.com/horde/Group",
+            "type": "vcs"
+        },
+        {
+            "url": "https://github.com/horde/HashTable",
+            "type": "vcs"
+        },
+        {
+            "url": "https://github.com/horde/History",
+            "type": "vcs"
+        },
+        {
+            "url": "https://github.com/horde/Injector",
+            "type": "vcs"
+        },
+        {
+            "url": "https://github.com/horde/JavascriptMinify",
+            "type": "vcs"
+        },
+        {
+            "url": "https://github.com/horde/Lock",
+            "type": "vcs"
+        },
+        {
+            "url": "https://github.com/horde/Log",
+            "type": "vcs"
+        },
+        {
+            "url": "https://github.com/horde/LoginTasks",
+            "type": "vcs"
+        },
+        {
+            "url": "https://github.com/horde/Mime",
+            "type": "vcs"
+        },
+        {
+            "url": "https://github.com/horde/Mime_Viewer",
+            "type": "vcs"
+        },
+        {
+            "url": "https://github.com/horde/Notification",
+            "type": "vcs"
+        },
+        {
+            "url": "https://github.com/horde/Pack",
+            "type": "vcs"
+        },
+        {
+            "url": "https://github.com/horde/Perms",
+            "type": "vcs"
+        },
+        {
+            "url": "https://github.com/horde/Prefs",
+            "type": "vcs"
+        },
+        {
+            "url": "https://github.com/horde/Secret",
+            "type": "vcs"
+        },
+        {
+            "url": "https://github.com/horde/Serialize",
+            "type": "vcs"
+        },
+        {
+            "url": "https://github.com/horde/SessionHandler",
+            "type": "vcs"
+        },
+        {
+            "url": "https://github.com/horde/Share",
+            "type": "vcs"
+        },
+        {
+            "url": "https://github.com/horde/Support",
+            "type": "vcs"
+        },
+        {
+            "url": "https://github.com/horde/Template",
+            "type": "vcs"
+        },
+        {
+            "url": "https://github.com/horde/Token",
+            "type": "vcs"
+        },
+        {
+            "url": "https://github.com/horde/Text_Filter",
+            "type": "vcs"
+        },
+        {
+            "url": "https://github.com/horde/Translation",
+            "type": "vcs"
+        },
+        {
+            "url": "https://github.com/horde/Url",
+            "type": "vcs"
+        },
+        {
+            "url": "https://github.com/horde/Util",
+            "type": "vcs"
+        },
+        {
+            "url": "https://github.com/horde/View",
+            "type": "vcs"
+        },
+        {
+            "uri": "https://pear.php.net",
+            "type": "pear"
+        },
+        {
+            "uri": "https://github.com/horde/ActiveSync",
+            "type": "vcs"
+        },
+        {
+            "uri": "https://github.com/horde/Backup",
+            "type": "vcs"
+        },
+        {
+            "uri": "https://github.com/horde/Crypt",
+            "type": "vcs"
+        },
+        {
+            "uri": "https://github.com/horde/Dav",
+            "type": "vcs"
+        },
+        {
+            "uri": "https://github.com/horde/Db",
+            "type": "vcs"
+        },
+        {
+            "uri": "https://github.com/horde/Editor",
+            "type": "vcs"
+        },
+        {
+            "uri": "https://github.com/horde/ElasticSearch",
+            "type": "vcs"
+        },
+        {
+            "uri": "https://github.com/horde/Form",
+            "type": "vcs"
+        },
+        {
+            "uri": "https://github.com/horde/Http",
+            "type": "vcs"
+        },
+        {
+            "uri": "https://github.com/horde/Icalendar",
+            "type": "vcs"
+        },
+        {
+            "uri": "https://github.com/horde/Image",
+            "type": "vcs"
+        },
+        {
+            "uri": "https://github.com/horde/Imap_Client",
+            "type": "vcs"
+        },
+        {
+            "uri": "https://github.com/horde/JavascriptMinify_Jsmin",
+            "type": "vcs"
+        },
+        {
+            "uri": "https://github.com/horde/Kolab_Server",
+            "type": "vcs"
+        },
+        {
+            "uri": "https://github.com/horde/Kolab_Session",
+            "type": "vcs"
+        },
+        {
+            "uri": "https://github.com/horde/Kolab_Storage",
+            "type": "vcs"
+        },
+        {
+            "uri": "https://github.com/horde/Ldap",
+            "type": "vcs"
+        },
+        {
+            "uri": "https://github.com/horde/Mail",
+            "type": "vcs"
+        },
+        {
+            "uri": "https://github.com/horde/Mongo",
+            "type": "vcs"
+        },
+        {
+            "uri": "https://github.com/horde/Nls",
+            "type": "vcs"
+        },
+        {
+            "uri": "https://github.com/horde/Oauth",
+            "type": "vcs"
+        },
+        {
+            "uri": "https://github.com/horde/Queue",
+            "type": "vcs"
+        },
+        {
+            "uri": "https://github.com/horde/Routes",
+            "type": "vcs"
+        },
+        {
+            "uri": "https://github.com/horde/Service_Twitter",
+            "type": "vcs"
+        },
+        {
+            "uri": "https://github.com/horde/SpellChecker",
+            "type": "vcs"
+        },
+        {
+            "uri": "https://github.com/horde/Test",
+            "type": "vcs"
+        },
+        {
+            "uri": "https://github.com/horde/Tree",
+            "type": "vcs"
+        },
+        {
+            "uri": "https://github.com/horde/Vfs",
+            "type": "vcs"
         }
     ],
     "require": {
         "php": "^5.3 || ^7",
-        "pear-pear.horde.org/Horde_Alarm": "^2.2",
-        "pear-pear.horde.org/Horde_Auth": "^2.2",
-        "pear-pear.horde.org/Horde_Autoloader": "^2.1",
-        "pear-pear.horde.org/Horde_Browser": "^2",
-        "pear-pear.horde.org/Horde_Cache": "^2.5",
-        "pear-pear.horde.org/Horde_Cli": "^2",
-        "pear-pear.horde.org/Horde_Compress": "^2",
-        "pear-pear.horde.org/Horde_Compress_Fast": "^1",
-        "pear-pear.horde.org/Horde_Controller": "^2",
-        "pear-pear.horde.org/Horde_CssMinify": "^1",
-        "pear-pear.horde.org/Horde_Data": "^2",
-        "pear-pear.horde.org/Horde_Date": "^2",
-        "pear-pear.horde.org/Horde_Exception": "^2",
-        "pear-pear.horde.org/Horde_Group": "^2.1",
-        "pear-pear.horde.org/Horde_HashTable": "^1.2",
-        "pear-pear.horde.org/Horde_History": "^2",
-        "pear-pear.horde.org/Horde_Injector": "^2",
-        "pear-pear.horde.org/Horde_JavascriptMinify": "^1",
-        "pear-pear.horde.org/Horde_Lock": "^2",
-        "pear-pear.horde.org/Horde_Log": "^2",
-        "pear-pear.horde.org/Horde_LoginTasks": "^2",
-        "pear-pear.horde.org/Horde_Mime": "^2.5",
-        "pear-pear.horde.org/Horde_Mime_Viewer": "^2.2",
-        "pear-pear.horde.org/Horde_Notification": "^2",
-        "pear-pear.horde.org/Horde_Pack": "^1",
-        "pear-pear.horde.org/Horde_Perms": "^2",
-        "pear-pear.horde.org/Horde_Prefs": "^2.9",
-        "pear-pear.horde.org/Horde_Secret": "^2",
-        "pear-pear.horde.org/Horde_Serialize": "^2",
-        "pear-pear.horde.org/Horde_SessionHandler": "^2",
-        "pear-pear.horde.org/Horde_Share": "^2",
-        "pear-pear.horde.org/Horde_Support": "^2",
-        "pear-pear.horde.org/Horde_Template": "^2",
-        "pear-pear.horde.org/Horde_Token": "^2",
-        "pear-pear.horde.org/Horde_Text_Filter": "^2",
-        "pear-pear.horde.org/Horde_Translation": "^2.2",
-        "pear-pear.horde.org/Horde_Url": "^2.1",
-        "pear-pear.horde.org/Horde_Util": "^2",
-        "pear-pear.horde.org/Horde_View": "^2",
+        "horde/Alarm": "^2.2",
+        "horde/Auth": "^2.2",
+        "horde/Autoloader": "^2.1",
+        "horde/Browser": "^2",
+        "horde/Cache": "^2.5",
+        "horde/Cli": "^2",
+        "horde/Compress": "^2",
+        "horde/Compress_Fast": "^1",
+        "horde/Controller": "^2",
+        "horde/CssMinify": "^1",
+        "horde/Data": "^2",
+        "horde/Date": "^2",
+        "horde/Exception": "^2",
+        "horde/Group": "^2.1",
+        "horde/HashTable": "^1.2",
+        "horde/History": "^2",
+        "horde/Injector": "^2",
+        "horde/JavascriptMinify": "^1",
+        "horde/Lock": "^2",
+        "horde/Log": "^2",
+        "horde/LoginTasks": "^2",
+        "horde/Mime": "^2.5",
+        "horde/Mime_Viewer": "^2.2",
+        "horde/Notification": "^2",
+        "horde/Pack": "^1",
+        "horde/Perms": "^2",
+        "horde/Prefs": "^2.9",
+        "horde/Secret": "^2",
+        "horde/Serialize": "^2",
+        "horde/SessionHandler": "^2",
+        "horde/Share": "^2",
+        "horde/Support": "^2",
+        "horde/Template": "^2",
+        "horde/Token": "^2",
+        "horde/Text_Filter": "^2",
+        "horde/Translation": "^2.2",
+        "horde/Url": "^2.1",
+        "horde/Util": "^2",
+        "horde/View": "^2",
         "pear-pear.php.net/PEAR": "*",
         "ext-session": "*"
     },
     "suggest": {
-        "pear-pear.horde.org/Horde_ActiveSync": "^2.39",
-        "pear-pear.horde.org/Horde_Backup": "^1",
-        "pear-pear.horde.org/Horde_Crypt": "^2",
-        "pear-pear.horde.org/Horde_Dav": "^1",
-        "pear-pear.horde.org/Horde_Db": "^2",
-        "pear-pear.horde.org/Horde_Editor": "^2",
-        "pear-pear.horde.org/Horde_ElasticSearch": "^1",
-        "pear-pear.horde.org/Horde_Form": "^2.0.15",
-        "pear-pear.horde.org/Horde_Http": "^2",
-        "pear-pear.horde.org/Horde_Icalendar": "^2",
-        "pear-pear.horde.org/Horde_Image": "^2.3",
-        "pear-pear.horde.org/Horde_Imap_Client": "^2",
-        "pear-pear.horde.org/Horde_JavascriptMinify_Jsmin": "^1",
-        "pear-pear.horde.org/Horde_Kolab_Server": "^2",
-        "pear-pear.horde.org/Horde_Kolab_Session": "^2",
-        "pear-pear.horde.org/Horde_Kolab_Storage": "^2",
-        "pear-pear.horde.org/Horde_Ldap": "^2",
-        "pear-pear.horde.org/Horde_Mail": "^2.3",
-        "pear-pear.horde.org/Horde_Mongo": "^1",
-        "pear-pear.horde.org/Horde_Nls": "^2",
-        "pear-pear.horde.org/Horde_Oauth": "^2",
-        "pear-pear.horde.org/Horde_Queue": "^1",
-        "pear-pear.horde.org/Horde_Routes": "^2",
-        "pear-pear.horde.org/Horde_Service_Twitter": "^2",
-        "pear-pear.horde.org/Horde_SpellChecker": "^2",
-        "pear-pear.horde.org/Horde_Test": "^2.6",
-        "pear-pear.horde.org/Horde_Tree": "^2",
-        "pear-pear.horde.org/Horde_Vfs": "^2.2",
+        "horde/ActiveSync": "^2.39",
+        "horde/Backup": "^1",
+        "horde/Crypt": "^2",
+        "horde/Dav": "^1",
+        "horde/Db": "^2",
+        "horde/Editor": "^2",
+        "horde/ElasticSearch": "^1",
+        "horde/Form": "^2.0.15",
+        "horde/Http": "^2",
+        "horde/Icalendar": "^2",
+        "horde/Image": "^2.3",
+        "horde/Imap_Client": "^2",
+        "horde/JavascriptMinify_Jsmin": "^1",
+        "horde/Kolab_Server": "^2",
+        "horde/Kolab_Session": "^2",
+        "horde/Kolab_Storage": "^2",
+        "horde/Ldap": "^2",
+        "horde/Mail": "^2.3",
+        "horde/Mongo": "^1",
+        "horde/Nls": "^2",
+        "horde/Oauth": "^2",
+        "horde/Queue": "^1",
+        "horde/Routes": "^2",
+        "horde/Service_Twitter": "^2",
+        "horde/SpellChecker": "^2",
+        "horde/Test": "^2.6",
+        "horde/Tree": "^2",
+        "horde/Vfs": "^2.2",
         "pear-pear.php.net/Net_DNS2": "^1.3",
         "pear-pear.php.net/Text_CAPTCHA": "*",
         "pear-pear.php.net/Text_Figlet": "*",
@@ -116,13 +384,9 @@
         "ext-SimpleXML": "*",
         "ext-sockets": "*"
     },
-    "replace": {
-        "pear-pear.horde.org/Horde_Core": "2.*",
-        "pear-horde/Horde_Core": "2.*"
-    },
     "autoload": {
         "psr-0": {
-            "Horde": "lib/"
+            "Horde_Core": "lib/"
         }
     }
 }
